@@ -16,6 +16,7 @@ https://chameleoncloud.readthedocs.io/en/latest/technical/fpga.html
 
 ```
 export ALTERAOCLSDKROOT=/opt/altera_pro/16.0.2/hld
+export AOCL_BOARD_PACKAGE_ROOT=/opt/altera_pro/16.0.2/hld/board/nalla_pcie
 source /opt/altera_pro/16.0.2/hld/init_opencl.sh
 ```
 
