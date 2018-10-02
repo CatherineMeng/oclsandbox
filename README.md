@@ -9,6 +9,9 @@ opencl sandbox
 
 ## Build and run on Chameleon cloud FPGA in emulated mode
 
+More info on the Chameleon Cloud FPGA nodes is here:
+https://chameleoncloud.readthedocs.io/en/latest/technical/fpga.html
+
 ### Build
 
 ```
