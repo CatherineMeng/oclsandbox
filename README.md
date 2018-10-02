@@ -1,2 +1,50 @@
 # oclsandbox
 opencl sandbox
+
+## Dependencies
+
+- OpenCL 1.0
+- CMake 2.8
+- Altera OpenCL SDK 16
+
+## Build and run on Chameleon cloud FPGA in emulated mode
+
+### Build
+
+```
+git clone git@github.com:cwsmith/oclsandbox
+mkdir build-oclsandbox
+cd !$
+cmake ../oclsandbox/ -DENABLE_OPENCL_Altera=ON -DOPENCL_HPP_DIR=../oclsandbox/opencl -DFPGA_BOARD=p385a_sch_ax115
+make
+```
+
+### Run
+
+```
+cd build-oclsanbox
+CL_CONTEXT_EMULATOR_DEVICE_ALTERA=1 ./reduction/reducer --device 0 --kernel ./reduction/reduce_sum.aocx
+```
+
+If all goes well you will see the following output:
+
+```
+Inputs: --device 0 --kernel ./reduction/reduce_sum.aocx 
+
+Using OpenCL device: EmulatorDevice : Emulated Device
+extension aocx
+kernel result 523776
+```
+
+## Build and run on Chameleon cloud FPGA
+
+### Build
+
+Follow the instructions above and add `-DKERNEL_CIRCUIT=ON` to the `cmake` command.
+
+### Run
+
+```
+cd build-oclsanbox
+./reduction/reducer --device 0 --kernel ./reduction/reduce_sum.aocx
+```
