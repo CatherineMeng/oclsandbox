@@ -18,6 +18,9 @@ https://chameleoncloud.readthedocs.io/en/latest/technical/fpga.html
 git clone git@github.com:cwsmith/oclsandbox
 mkdir build-oclsandbox
 cd !$
+export CMAKE_PREFIX_PATH=/opt/altera_pro/16.0.2/hld/board/nalla_pcie/linux64/lib:\
+/opt/altera_pro/16.0.2/hld/host/linux64/lib:\
+/opt/altera_pro/16.0.2/hld/host/include:$CMAKE_PREFIX_PATH
 cmake ../oclsandbox/ -DENABLE_OPENCL_Altera=ON -DOPENCL_HPP_DIR=../oclsandbox/opencl -DFPGA_BOARD=p385a_sch_ax115
 make
 ```
