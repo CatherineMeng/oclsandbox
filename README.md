@@ -14,8 +14,10 @@ https://chameleoncloud.readthedocs.io/en/latest/technical/fpga.html
 
 ### Environment Setup
 
+```
 export ALTERAOCLSDKROOT=/opt/altera_pro/16.0.2/hld
 source /opt/altera_pro/16.0.2/hld/init_opencl.sh
+```
 
 ### Build
 
