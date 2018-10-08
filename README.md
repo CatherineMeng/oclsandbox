@@ -28,7 +28,7 @@ make
 ### Run
 
 ```
-cd build-oclsanbox
+cd build-oclsandbox
 CL_CONTEXT_EMULATOR_DEVICE_ALTERA=1 ./reduction/reducer --device 0 --kernel ./reduction/reduce_sum.aocx
 ```
 
