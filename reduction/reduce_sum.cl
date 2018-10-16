@@ -1,20 +1,17 @@
 __kernel void reduce_sum(global int* restrict in, const int sz, global int* restrict result) {
   printf("Hello from Altera's OpenCL Compiler!\n");
 
-  int shreg[1024];
+  int shreg[2];
   #pragma unroll
-  for(int i=0; i<sz; i++) {
+  for(int i=0; i<2; i++) {
   	shreg[i]=0;
   }
   int sum=0;
   for (int j=0; j<sz; j++){
-  	#pragma unroll
-  	for(int i=0; i<(sz-1); i++) {
-  		shreg[i]=shreg[i+1];
-  	}
-  	shreg[sz-1]=in[j];
+  	shreg[0]=shreg[1];
+	shreg[1]=in[j];
   
-  	sum+=shreg[sz-1];
+  	sum+=shreg[1];
   }
   *result=sum;
 }
