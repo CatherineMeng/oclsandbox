@@ -119,6 +119,7 @@ int main(int argc, char** argv) {
               << err_code(err.err())
               << ")"
               << std::endl;
+    return 1;
   }
 
 
